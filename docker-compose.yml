@@ -43,3 +43,18 @@ services:
       - ./objresult:/root/darknet/objresult
     command: tail -f /dev/null
 
+  mongo:
+    image: mongo
+    ports:
+     - '27017:27017'
+    volumes:
+     - /var/lib/mongo:/data/db
+
+  facerecog:
+    image: x9340805/facerecog:0.0.4
+    depends_on:
+      - kafka
+    links:
+      - kafka
+    volumes:
+      - ./usr_info:/face/usr_info
