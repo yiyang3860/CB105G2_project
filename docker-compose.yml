@@ -48,8 +48,8 @@ services:
     ports:
      - '27017:27017'
     volumes:
-     - /var/lib/mongo:/data/db
-
+     - ./mongo:/data/db
+     - ~/recipe:/recipe
   facerecog:
     image: x9340805/facerecog:0.0.4
     depends_on:
@@ -58,3 +58,14 @@ services:
       - kafka
     volumes:
       - ./usr_info:/face/usr_info
+  
+  recipe:
+    image: mei11535/recipe:0.0.2
+    depends_on:
+      - yolov3
+    volumes:
+      - ./objresult:/recipe/guess_new  
+      - ./recipeoutput:/recipe/result
+      - ./recipeoutputold:/recipe/guess_old
+
+
