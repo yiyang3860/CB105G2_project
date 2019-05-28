@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://dl.dropbox.com/s/btfbrz9jf2889co/css.css" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>清單編號</td>
+            <td>購買品項</td>
+            <td>購買時間</td>
+            <td>確認狀態</td>
+        </tr>
+        {% for buylist in buylists %}
+        <tr>
+            <td>{{ buylist.listid }}</td>
+            <td>{{ buylist.content }}</td>
+            <td>{{ buylist.buydatetime }}</td>
+            <td>{{ buylist.confirmstatus }}</td>
+        </tr>
+
+        {% endfor %}
+    </table>
+</body>
+</html>

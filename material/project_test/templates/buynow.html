@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="../static/css/css.css" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>購買品項</td>
+            <td>購買數量</td>
+            <td>單價</td>
+            <td>小計</td>
+        </tr>
+        {% for product in products %}
+        <tr>
+            <td>{{ product.pname }}</td>
+            <td>{{ product.amount }}</td>
+            <td>{{ product.priceperunit }}</td>
+            <td>{{ product.total }}</td>
+        </tr>
+
+        {% endfor %}
+
+    </table>
+    <p>合計：{{ ftotal }}</p>
+</body>
+</html>

@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% block head %}
+{{ super() }}
+<link rel="icon" href="data" />
+<script>var a=99;</script>
+{% endblock head %}
+{% block title %}Login{% endblock title %}
+{% block content%}
+<script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
+<form method='POST' action="/loginurl?line_id={{ line_id }}" enctype="multipart/form-data" onsubmit="closeliff">
+        <p>
+            請輸入使用者帳號：
+        <input type='text' name='username'>
+    </p>
+        <p>
+            請輸入密碼：
+        <input type="text" name="password">
+    </p>
+        <p>
+            請再次輸入密碼：
+        <input type="password" name="passwordconfirm">
+    </p>
+    <p>
+            請輸入email電子信箱：
+        <input type="email" name="email">
+    </p>
+
+    <p>請輸入性別</p>
+    <select name="Gender">
+　   <option value="male">男</option>
+　   <option value="female">女</option>
+    </select>
+    <br>
+    <p>請輸入喜歡的料理方式</p>
+    <select name="prefer">
+　        <option value="Taiwan">台式料理</option>
+　        <option value="Chinese">中式料理</option>
+        　<option value="Hongkong">港式料理</option>
+        　<option value="Japan">日式料理</option>
+        　<option value="Korea">韓式料理</option>
+        　<option value="Thailand">泰式料理</option>
+        　<option value="France">法式料理</option>
+        　<option value="America">美式料理</option>
+        　<option value="Italy">義式料理</option>
+    </select>
+        <br>
+    <br>
+    <!--<p>請放入一張正面照片上傳：</p>-->
+    <!--<div>-->
+
+        <!--<input type="file" name="faceimg" id="imageFile" accept="image/jpeg, image/png" onchange="readURL(this)"-->
+        <!--targetID="preview_progressbarTW_img"/>-->
+        <!--<br>-->
+        <!--<br>-->
+        <!--<img id="preview_progressbarTW_img" src="" width="250" height="400"/>-->
+        <!--<br/>-->
+    <p>
+        <button type='submit'>Submit</button>
+    </p>
+    <!--</div>-->
+</form>
+
+{% endblock content%}
+<script>
+    function closeliff() {
+    liff.closeWindow();
+    }
+</script>
+
+
+        <script>
+
+function readURL(input){
+
+  if(input.files && input.files[0]){
+
+    var imageTagID = input.getAttribute("targetID");
+
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+
+       var img = document.getElementById(imageTagID);
+
+       img.setAttribute("src", e.target.result)
+
+    }
+
+    reader.readAsDataURL(input.files[0]);
+
+  }
+
+}
+
+</script>
+        <!--<input type="image" name="sendimg">-->
+
+
+

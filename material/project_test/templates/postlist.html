@@ -1,0 +1,23 @@
+{% load staticfiles %}
+<!--<!DOCTYPE html>-->
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'css/css.css' %}">
+    <meta charset="UTF-8">
+    <title>Hello</title>
+</head>
+<body>
+    {% for post in posts %}
+    <p>Datetime: {{ post.posttime }}</p>
+    <p>{{ post.username }} 的留言:</p>
+    <div>{{ post.content }}</div>
+    {% endfor %}
+        <!--{% for content in contents %}-->
+            <!--<li>{{ content }}</li>-->
+        <!--{% endfor %}-->
+<script>
+var dt = new Date();
+document.getElementById("datetime").innerHTML = dt.toLocaleString();
+    </script>
+</body>
+</html>

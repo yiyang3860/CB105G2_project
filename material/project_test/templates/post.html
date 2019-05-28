@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block head %}
+{{ super() }}
+<script>var a=99;</script>
+{% endblock head %}
+{% block title %}Login{% endblock title %}
+{% block content%}
+<form method='post' action="{{ url_for('post') }}">
+        <p>
+            請輸入使用者帳號：
+        <input type='text' name='username'>
+    </p>
+        <p>
+            請輸入留言：
+            </p>
+        <p>
+        <textarea rows="6" cols="30" id="contents" name="contents">
+        </textarea>
+    </p>
+        <p>
+        <button type='submit'>Submit</button>
+    </p>
+</form>
+{% endblock content%}

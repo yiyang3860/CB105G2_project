@@ -1,0 +1,228 @@
+﻿table {
+  border:1px solid #000;
+  font-family: 微軟正黑體;
+  font-size:16px;
+  width:200px;
+  border:1px solid #000;
+  text-align:center;
+  border-collapse:collapse;
+}
+th {
+  background-color: #009FCC;
+  padding:10px;
+  border:1px solid #000;
+  color:#fff;
+}
+td {
+  border:1px solid #000;
+  padding:5px;
+}
+　
+　
+
+#Container {
+	left: 0px;
+	top: 0px;
+	width: 860px;
+	background-image: url('images/tablexpand.jpg');
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+}
+#header_ {
+	float: left;
+	left: 0px;
+	top: 0px;
+	width: 860px;
+	height: 312px;
+	background-image: url('images/header.jpg');
+}
+#header_ ul.navi{
+	padding: 0px;
+	margin: 260px 0px 0px 0px;
+	width: auto;
+	text-align: center;
+	position: relative;
+}
+#header_ ul.navi li{
+	height: 22px;
+	padding: 0 10px 0 10px;
+	margin: 0;
+	display: inline;
+}
+#header_ ul.navi li a{
+	background-position: 0px 16px;
+	padding: 4px 15px 7px 27px;
+	font: 28px "tw Cen MT";
+	color: #FFFFFF;
+	text-decoration: none;
+	text-indent: 0px;
+	font-weight: normal;
+	margin: 0;
+	letter-spacing: -1px;
+	line-height: 33px;
+	background-repeat: no-repeat;
+	background-image: url('images/headerButton.png');
+}
+#header_ ul.navi li a:hover{
+	color: #ddf978;
+	text-decoration: none;
+	background-image: url('images/headerButtonOver.png');
+}
+
+#left_ {
+	float: left;
+	left: 0px;
+	top: 312px;
+	width: 247px;
+	background-image: url('images/left.jpg');
+}
+#left_ h2{
+	padding: 10px 0px 0px 40px;
+	margin: 10px 0 0px 35px;
+	font: 26px/24px arial, Helvetica, sans-serif;
+	color: #ffe1c3;
+	font-weight: normal;
+	display: block;
+	letter-spacing: -1px;
+	word-spacing: 0em;
+	text-indent: 0px;
+	text-transform: lowercase;
+	background-image: url('images/blockHeading.jpg');
+	background-repeat: no-repeat;
+	height: 41px;
+}
+#left_ ul{
+	padding: 0px 0px 0px 0px;
+	display: block;
+	margin: 5px 0 10px 60px;
+	list-style: none;
+}
+#left_ ul li{
+	padding: 0 0 0 0px;
+	margin: 0 0 0 0px;
+}
+#left_ ul li a{
+	color: #000000;
+	background-position: 0px 6px;
+	background: url('images/button.gif') no-repeat 0;
+	font-size: 13px;
+	padding: 2px 0px 2px 16px;
+	display: block;
+	text-decoration: underline;
+	color: #2e370a;
+	font-weight: bold;
+}
+#left_ ul li a:hover{
+	text-decoration: none;
+	background-image: url('images/buttonOver.gif');
+}
+
+#right_ {
+	float: left;
+	left: 247px;
+	top: 312px;
+	width: 613px;
+	background-image: url('images/right.jpg');
+}
+#right_ h2{
+	padding: 10px 0px 0px 40px;
+	margin: 10px 0 0px 9px;
+	font: 26px/24px arial, Helvetica, sans-serif;
+	color: #eafece;
+	font-weight: normal;
+	display: block;
+	letter-spacing: -1px;
+	word-spacing: 0em;
+	text-indent: 0px;
+	text-transform: lowercase;
+	background-image: url('images/contentsHeading.jpg');
+	background-repeat: no-repeat;
+	height: 41px;
+}
+#rightSub {
+	margin: 0px 0px 0px 10px;
+	background-image: url('images/contentsbg.jpg');
+	background-repeat: no-repeat;
+}
+#rightSub p{
+	margin: 0px;
+	color: #000000;
+	padding: 0 0 0 33px;
+	width: 530px;
+	display: block;
+	font: 13px/20px tahoma;
+	letter-spacing: 0px;
+}
+#rightSub p span{
+	color: #99CC00;
+	font-weight: bold;
+	font-size: 15px;
+	letter-spacing: 0px;
+}
+#rightSub p span.bg{
+	color: #799fbb;
+}
+
+#tablexpand_ {
+	float: left;
+	left:0px;
+	top:674px;
+	width:860px;
+	height:6px;
+}
+
+#footer_ {
+	float: left;
+	left: 0px;
+	top: 680px;
+	width: 860px;
+	height: 90px;
+	background-image: url('images/footer.jpg');
+}
+#footer_  p{
+	background: no-repeat;
+	padding: 20px 0 20px 0;
+	margin: 0 0 0 0px;
+	width: 100%;
+	display: block;
+	text-align: center;
+	font-family: tahoma;
+	font-size: 12px;
+	line-height: 18px;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+#footer_ a {
+	color:#FFFFFF;
+}
+#footer_ a:hover {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.clear {
+	clear:both;
+}
+a {
+	font-weight: bold;
+	color: #000000;
+	text-decoration: underline;
+}
+a:hover {
+	font-weight: bold;
+	color: #000000;
+	text-decoration: none;
+}
+
+body {
+	margin: 0px;
+	font-family: tahoma;
+	font-size: 60px;
+	//background-color: #e1e4af;
+	height: 100%;
+	background: url( 'https://st3.depositphotos.com/2824565/14532/i/1600/depositphotos_145329941-stock-photo-supermarket-store-blur-background-with.jpg' );
+　  background-size: cover;
+    background-repeat: no-repeat;
+    background-position:top center;
+    background-attachment: fixed;
+}

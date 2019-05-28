@@ -33,7 +33,7 @@ services:
       # command: bash -c "/etc/confluent/docker/run" && kafka-topics --create --zookeeper zookeeper:2181 --replication-factor 1 --partitions 1 --topic test10
 
   yolov3:
-    image: devanliang/yolov3:0.0.2
+    image: devanliang/yolov3:0.0.3
     depends_on: 
       - kafka
     links: 
@@ -41,6 +41,7 @@ services:
     volumes:
       - ./yolov3start.sh:/root/darknet/yolov3start.sh
       - ./objresult:/root/darknet/objresult
+      - ./objimage:/root/darknet/inputimg
     command: tail -f /dev/null
 
   mongo:
@@ -67,5 +68,44 @@ services:
       - ./objresult:/recipe/guess_new  
       - ./recipeoutput:/recipe/result
       - ./recipeoutputold:/recipe/guess_old
+    
+  mysql:
+    image: mysql:8.0
+    ports:
+      - '3306:3306'
+    volumes:
+      - ./mysql:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: my-secret-pw
+    
+  redis:
+    image: redis
+    ports:
+      - '6379:6379'
+    volumes:
+      - ./redis:/data
+  
+  sendtouser:
+    image: yiyang3860/sendtouser:0.0.2
+    volumes:
+      - ./recipeoutputold:/sendtouser/recipeoutputold
+      - ./usr_info:/sendtouser/usr_info
+      - ./objresult:/sendtouser/objresult
+
+  linebot:
+    image: yiyang3860/linebot:0.0.1
+    volumes:
+      - ./material:/linebot/material
+      - ./LineBotMenu.lbd:/linebot/LineBotMenu.lbd
+    ports:
+      - '8888:8888'
+      - '80:5000'
+    command: start-notebook.sh --NotebookApp.token=''
+  
+  serveo:
+    image: jessefugitt/docker-autossh
+    command: autossh -M 0 -g -N -o StrictHostKeyChecking=no -o ServerAliveInterval=5 -o ServerAliveCountMax=1 -i /root/.ssh/id_rsa -R cb10502.serveo.net:80:172.20.0.7:5000 serveo.net
+
+
 
 
